@@ -68,6 +68,17 @@ public class SpectrumImpl implements Spectrum {
 		public boolean hasActivations() {
 			return activity.cardinality() != 0;
 		}
+		
+		public boolean[] getActivityArray() {
+			int size = getTransactionsSize();
+			
+			boolean activityArray[] = new boolean[size];
+			for (int p = 0; p < size; p++) {
+				activityArray[p] = activity.get(p);
+			}
+			
+			return activityArray;
+		}
 	}
 
 	public void addTransaction(String transactionName, boolean[] activity, boolean isError) {
@@ -176,6 +187,11 @@ public class SpectrumImpl implements Spectrum {
 	@Override
 	public BitSet getTransactionActivity(int t) {
 		return transactions.get(t).activity;
+	}
+	
+	@Override
+	public boolean[] getTransactionActivityArray(int t) {
+		return transactions.get(t).getActivityArray();
 	}
 
 	@Override

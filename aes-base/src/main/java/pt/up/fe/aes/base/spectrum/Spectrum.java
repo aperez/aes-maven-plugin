@@ -31,4 +31,6 @@ public interface Spectrum {
 	Node getNodeOfProbe(int probeId);
 	
 	int getTransactionHashCode(int t);
+
+	boolean[] getTransactionActivityArray(int t);
 }
