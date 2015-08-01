@@ -5,10 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class AmbiguityMetric extends AbstractMetric {
+public class AmbiguityMetric extends AbstractDoubleMetric {
 
 	@Override
-	public double calculate() {
+	public double calculateValue() {
 				
 		if(!validMatrix())
 			return 0;

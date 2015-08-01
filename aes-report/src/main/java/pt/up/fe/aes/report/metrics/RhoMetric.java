@@ -1,9 +1,9 @@
 package pt.up.fe.aes.report.metrics;
 
-public class RhoMetric extends AbstractMetric {
+public class RhoMetric extends AbstractDoubleMetric {
 	
 	@Override
-	public double calculate() {
+	public double calculateValue() {
 		
 		if(!validMatrix())
 			return 0;

@@ -71,7 +71,7 @@ public abstract class AbstractReport {
 
 		addDescription(scores);
 		for(Metric metric : getMetrics()) {
-			scores.add(metric.getName() + ": " + String.format("%.4f", metric.calculate()));
+			scores.add(metric.getName() + ": " + metric.calculate());
 		}
 
 		return scores;

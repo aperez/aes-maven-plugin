@@ -1,7 +1,7 @@
 package pt.up.fe.aes.report.metrics;
 
 
-public class CoverageMetric extends AbstractMetric {
+public class CoverageMetric extends AbstractDoubleMetric {
 
 	private String granularity;
 	
@@ -14,7 +14,7 @@ public class CoverageMetric extends AbstractMetric {
 	}
 	
 	@Override
-	public double calculate() {
+	public double calculateValue() {
 		
 		if(!validMatrix())
 			return 0;

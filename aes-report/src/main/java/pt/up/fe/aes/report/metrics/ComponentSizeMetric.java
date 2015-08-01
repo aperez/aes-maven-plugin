@@ -1,9 +1,9 @@
 package pt.up.fe.aes.report.metrics;
 
-public class ComponentSizeMetric extends AbstractMetric {
+public class ComponentSizeMetric extends AbstractIntegerMetric {
 
 	@Override
-	public double calculate() {
+	public int calculateValue() {
 		return spectrum.getComponentsSize();
 	}
 

@@ -5,15 +5,15 @@ import pt.up.fe.aes.report.metrics.SimpsonMetric.GlobalInvertedSimpsonMetric;
 import pt.up.fe.aes.report.metrics.SimpsonMetric.InvertedSimpsonMetric;
 import pt.up.fe.aes.report.metrics.reducers.MultiplicationReducer;
 
-public class ApproximateEntropyMetric implements Metric {
+public class ApproximateEntropyMetric extends AbstractDoubleMetric {
 
-	private Metric metric;
+	private AbstractDoubleMetric metric;
 	
 	public ApproximateEntropyMetric() {
 		this.metric = generateMetric();
 	}
 	
-	protected Metric generateMetric() {
+	protected AbstractDoubleMetric generateMetric() {
 		return new MultiplicationReducer(
 						new RhoMetric(), 
 						new InvertedSimpsonMetric(), 
@@ -26,8 +26,8 @@ public class ApproximateEntropyMetric implements Metric {
 	}
 
 	@Override
-	public double calculate() {
-		return metric.calculate();
+	public double calculateValue() {
+		return metric.calculateValue();
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class ApproximateEntropyMetric implements Metric {
 	
 	public static class GlobalApproximateEntropyMetric extends ApproximateEntropyMetric {
 		@Override
-		protected Metric generateMetric() {
+		protected AbstractDoubleMetric generateMetric() {
 			return new MultiplicationReducer(
 						new RhoMetric(), 
 						new GlobalInvertedSimpsonMetric(), 

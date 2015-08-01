@@ -3,10 +3,10 @@ package pt.up.fe.aes.report.metrics;
 import java.util.HashSet;
 import java.util.Set;
 
-public class UniqueTestSizeMetric extends AbstractMetric {
+public class UniqueTestSizeMetric extends AbstractIntegerMetric {
 
 	@Override
-	public double calculate() {
+	public int calculateValue() {
 
 		Set<Integer> s = new HashSet<Integer>();
 

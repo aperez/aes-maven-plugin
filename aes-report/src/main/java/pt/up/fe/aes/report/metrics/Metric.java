@@ -6,7 +6,7 @@ public interface Metric {
 
 	public void setSpectrum(Spectrum spectrum);
 	
-	public double calculate();
+	public String calculate();
 	
 	public String getName();
 }

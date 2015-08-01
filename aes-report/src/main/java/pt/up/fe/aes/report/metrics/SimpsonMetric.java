@@ -2,10 +2,10 @@ package pt.up.fe.aes.report.metrics;
 
 import java.util.LinkedHashMap;
 
-public class SimpsonMetric extends AbstractMetric {
+public class SimpsonMetric extends AbstractDoubleMetric {
 
 	@Override
-	public double calculate() {
+	public double calculateValue() {
 		
 		if(!validMatrix())
 			return 0;
@@ -45,8 +45,8 @@ public class SimpsonMetric extends AbstractMetric {
 	
 	public static class InvertedSimpsonMetric extends SimpsonMetric {
 		@Override
-		public double calculate() {
-			return 1d - super.calculate();
+		public double calculateValue() {
+			return 1d - super.calculateValue();
 		}
 		
 		@Override

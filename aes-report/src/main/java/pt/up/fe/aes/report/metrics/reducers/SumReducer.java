@@ -1,10 +1,10 @@
 package pt.up.fe.aes.report.metrics.reducers;
 
-import pt.up.fe.aes.report.metrics.Metric;
+import pt.up.fe.aes.report.metrics.AbstractDoubleMetric;
 
 public class SumReducer extends AbstractMetricReducer {
 
-	public SumReducer(Metric... metrics) {
+	public SumReducer(AbstractDoubleMetric... metrics) {
 		super(metrics);
 	}
 	

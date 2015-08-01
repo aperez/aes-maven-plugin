@@ -1,9 +1,9 @@
 package pt.up.fe.aes.report.metrics;
 
-public class TestSizeMetric extends AbstractMetric {
+public class TestSizeMetric extends AbstractIntegerMetric {
 
 	@Override
-	public double calculate() {
+	public int calculateValue() {
 		return spectrum.getTransactionsSize();
 	}
 

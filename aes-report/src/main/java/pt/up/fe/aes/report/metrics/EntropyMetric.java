@@ -3,13 +3,13 @@ package pt.up.fe.aes.report.metrics;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
-public class EntropyMetric extends AbstractMetric {
+public class EntropyMetric extends AbstractDoubleMetric {
 
 	protected LinkedHashMap<Integer, Integer> globalCounter = new LinkedHashMap<Integer, Integer>();
 	protected LinkedHashMap<Integer, Integer> localCounter = new LinkedHashMap<Integer, Integer>();
 
 	@Override
-	public double calculate() {
+	public double calculateValue() {
 
 		if(!validMatrix())
 			return 0;
