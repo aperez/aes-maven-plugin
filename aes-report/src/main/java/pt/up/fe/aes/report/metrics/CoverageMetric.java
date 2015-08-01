@@ -9,6 +9,10 @@ public class CoverageMetric extends AbstractDoubleMetric {
 		setGranularity(granularity);
 	}
 
+	public CoverageMetric() {
+		this(null);
+	}
+
 	public void setGranularity(String granularity) {
 		this.granularity = granularity;
 	}

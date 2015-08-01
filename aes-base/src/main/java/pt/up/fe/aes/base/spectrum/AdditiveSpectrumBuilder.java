@@ -63,7 +63,7 @@ public class AdditiveSpectrumBuilder extends SpectrumBuilder {
 			addProbe(probeId, source.getNodeOfProbe(probeId).getId());
 		}
 		
-		for (int t = 0; t < this.currentIndex || t < this.testSize; t++) {
+		for (int t = 0; t < this.currentIndex && t < this.testSize; t++) {
 			String transactionName = source.getTransactionName(t);
 			boolean[] activity = source.getTransactionActivityArray(t);
 			int hashCode = source.getTransactionHashCode(t);

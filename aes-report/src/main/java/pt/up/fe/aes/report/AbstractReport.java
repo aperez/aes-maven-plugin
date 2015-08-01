@@ -13,6 +13,7 @@ import pt.up.fe.aes.report.metrics.CoverageMetric;
 import pt.up.fe.aes.report.metrics.EntropyMetric;
 import pt.up.fe.aes.report.metrics.EntropyMetric.GlobalEntropyMetric;
 import pt.up.fe.aes.report.metrics.Metric;
+import pt.up.fe.aes.report.metrics.ProgressionMetric;
 import pt.up.fe.aes.report.metrics.RhoMetric;
 import pt.up.fe.aes.report.metrics.SimpsonMetric;
 import pt.up.fe.aes.report.metrics.SimpsonMetric.GlobalSimpsonMetric;
@@ -56,7 +57,8 @@ public abstract class AbstractReport {
 					new ComponentSizeMetric(), 
 					new TestSizeMetric(),
 					new UniqueTestSizeMetric(),
-					new GlobalUniqueTestSizeMetric()
+					new GlobalUniqueTestSizeMetric(),
+					new ProgressionMetric()
 					);
 
 			for(Metric metric : metrics) {
