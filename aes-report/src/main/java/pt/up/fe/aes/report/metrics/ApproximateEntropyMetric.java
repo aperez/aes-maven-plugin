@@ -43,10 +43,5 @@ public class ApproximateEntropyMetric extends AbstractDoubleMetric {
 						new GlobalInvertedSimpsonMetric(), 
 						new AmbiguityMetric());
 		}
-		
-		@Override
-		public String getName() {
-			return "(Global) Approximate Entropy";
-		}
 	}
 }

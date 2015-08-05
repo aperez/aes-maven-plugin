@@ -33,4 +33,8 @@ public interface Spectrum {
 	int getTransactionHashCode(int t);
 
 	boolean[] getTransactionActivityArray(int t);
+	
+	double getMinCompTrans(int c) ;
+	
+	double getMaxCompTrans(int c) ;
 }

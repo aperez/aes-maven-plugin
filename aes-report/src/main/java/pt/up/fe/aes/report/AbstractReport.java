@@ -6,20 +6,14 @@ import java.util.List;
 
 import pt.up.fe.aes.base.spectrum.Spectrum;
 import pt.up.fe.aes.report.metrics.AmbiguityMetric;
-import pt.up.fe.aes.report.metrics.ApproximateEntropyMetric;
 import pt.up.fe.aes.report.metrics.ApproximateEntropyMetric.GlobalApproximateEntropyMetric;
-import pt.up.fe.aes.report.metrics.ComponentSizeMetric;
 import pt.up.fe.aes.report.metrics.CoverageMetric;
-import pt.up.fe.aes.report.metrics.EntropyMetric;
 import pt.up.fe.aes.report.metrics.EntropyMetric.GlobalEntropyMetric;
 import pt.up.fe.aes.report.metrics.Metric;
 import pt.up.fe.aes.report.metrics.ProgressionMetric;
 import pt.up.fe.aes.report.metrics.RhoMetric;
-import pt.up.fe.aes.report.metrics.SimpsonMetric;
-import pt.up.fe.aes.report.metrics.SimpsonMetric.GlobalSimpsonMetric;
-import pt.up.fe.aes.report.metrics.TestSizeMetric;
-import pt.up.fe.aes.report.metrics.UniqueTestSizeMetric;
-import pt.up.fe.aes.report.metrics.UniqueTestSizeMetric.GlobalUniqueTestSizeMetric;
+import pt.up.fe.aes.report.metrics.SimpsonMetric.GlobalInvertedSimpsonMetric;
+
 
 public abstract class AbstractReport {
 
@@ -46,18 +40,11 @@ public abstract class AbstractReport {
 			metrics = new ArrayList<Metric>();
 			Collections.addAll(metrics, 
 					new RhoMetric(), 
-					new SimpsonMetric(),
+					new GlobalInvertedSimpsonMetric(),
 					new AmbiguityMetric(), 
-					new ApproximateEntropyMetric(), 
-					new EntropyMetric(),
-					new CoverageMetric(granularity), 
-					new GlobalSimpsonMetric(), 
 					new GlobalApproximateEntropyMetric(),
 					new GlobalEntropyMetric(),
-					new ComponentSizeMetric(), 
-					new TestSizeMetric(),
-					new UniqueTestSizeMetric(),
-					new GlobalUniqueTestSizeMetric(),
+					new CoverageMetric(granularity),
 					new ProgressionMetric()
 					);
 

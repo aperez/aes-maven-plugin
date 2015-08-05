@@ -51,7 +51,7 @@ public class SimpsonMetric extends AbstractDoubleMetric {
 		
 		@Override
 		public String getName() {
-			return "Inverted Simpson";
+			return "Inverse Simpson";
 		}
 	}
 	
@@ -63,7 +63,7 @@ public class SimpsonMetric extends AbstractDoubleMetric {
 		
 		@Override
 		public String getName() {
-			return "(Global) Inverted Simpson";
+			return "Inverse Simpson";
 		}
 	}
 	
@@ -71,11 +71,6 @@ public class SimpsonMetric extends AbstractDoubleMetric {
 		@Override
 		protected int getHash(int t) {
 			return spectrum.getTransactionHashCode(t);
-		}
-		
-		@Override
-		public String getName() {
-			return "(Global) Simpson";
 		}
 	}
 
