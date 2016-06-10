@@ -21,6 +21,7 @@
 			<phase>
 				<id>test</id>
 				<configuration>
+				    <forkCount>1</forkCount>
 					<testFailureIgnore>true</testFailureIgnore>
 					<properties>
 						<property>
