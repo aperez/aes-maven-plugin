@@ -1,7 +1,5 @@
 package pt.up.fe.aes.maven;
 
-import java.util.List;
-
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Execute;
@@ -37,17 +35,8 @@ public class AESMojo extends AbstractAESMojo {
 			spectrum = fsb.getSpectrum();
 		}
 		
-		ReportGenerator reportGenerator = new ReportGenerator(project.getName(), 
-															  spectrum, 
-															  granularityLevel.name(),
-															  classesToInstrument);		
-		List<String> metrics = reportGenerator.generate(reportDirectory);
-		
-		getLog().info("");
-		for(String metricDescription : metrics) {
-			getLog().info(metricDescription);
-		}
-		getLog().info("");
+		ReportGenerator rg = new ReportGenerator(project.getName(), spectrum, granularityLevel.name(), classesToInstrument);
+		rg.generate(reportDirectory);
 		getLog().info("Writing report at " + reportDirectory.getAbsolutePath() + ".");	
 	}
 
