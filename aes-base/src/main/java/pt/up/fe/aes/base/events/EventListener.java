@@ -8,7 +8,7 @@ public interface EventListener {
 	
 	void endTransaction (String transactionName, boolean[] activity, int hashCode, boolean isError);
 
-	void addNode(int id, String name, Type type, int parentId);
+	void addNode(int id, String name, Type type, int parentId, int startLine, int endLine);
 
 	void addProbe(int id, int nodeId);
 	

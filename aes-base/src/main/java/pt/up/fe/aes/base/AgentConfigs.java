@@ -149,7 +149,7 @@ public class AgentConfigs {
 				public void addProbe(int id, int nodeId) { }
 				
 				@Override
-				public void addNode(int id, String name, Type type, int parentId) { }
+				public void addNode(int id, String name, Type type, int parentId, int startLine, int endLine) { }
 			};
     	}
 	}

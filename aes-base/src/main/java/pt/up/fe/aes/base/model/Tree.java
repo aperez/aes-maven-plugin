@@ -18,7 +18,7 @@ public class Tree implements Iterable<Node> {
 
 	public Tree (boolean createRoot) {
 		if (createRoot) {
-			Node node = new Node("root", Node.Type.PACKAGE, nodes.size(), null);
+			Node node = new Node("root", Node.Type.PACKAGE, nodes.size(), null, -1, -1);
 			nodes.add(node);
 		}
 	}
@@ -47,10 +47,10 @@ public class Tree implements Iterable<Node> {
 		return nodes.iterator();
 	}
 
-	public Node addNode (String name, Node.Type type, int parentId) {
+	public Node addNode (String name, Node.Type type, int parentId, int startLine, int endLine) {
 		Node parent = getNode(parentId);
 
-		Node child = new Node(name, type, nodes.size(), parent);
+		Node child = new Node(name, type, nodes.size(), parent, startLine, endLine);
 
 		nodes.add(child);
 		return child;

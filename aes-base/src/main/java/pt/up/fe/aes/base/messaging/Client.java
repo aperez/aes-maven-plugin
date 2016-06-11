@@ -121,8 +121,8 @@ public class Client implements EventListener {
 	}
 
 	@Override
-	public void addNode(int id, String name, Type type, int parentId) {
-		postMessage(new AddNodeMessage(id, name, type, parentId));
+	public void addNode(int id, String name, Type type, int parentId, int startLine, int endLine) {
+		postMessage(new AddNodeMessage(id, name, type, parentId, startLine, endLine));
 	}
 
 	@Override

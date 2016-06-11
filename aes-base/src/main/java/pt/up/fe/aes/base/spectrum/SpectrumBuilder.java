@@ -30,8 +30,8 @@ public class SpectrumBuilder implements EventListener {
 	}
 
 	@Override
-	public void addNode(int id, String name, Type type, int parentId) {
-		spectrum.getTree().addNode(name, type, parentId);
+	public void addNode(int id, String name, Type type, int parentId, int startLine, int endLine) {
+		spectrum.getTree().addNode(name, type, parentId, startLine, endLine);
 	}
 
 	@Override
