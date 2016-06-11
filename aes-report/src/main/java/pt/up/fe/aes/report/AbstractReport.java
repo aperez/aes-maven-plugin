@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import pt.up.fe.aes.base.model.Node;
 import pt.up.fe.aes.base.spectrum.Spectrum;
 import pt.up.fe.aes.report.metrics.AmbiguityMetric;
 import pt.up.fe.aes.report.metrics.ApproximateEntropyMetric.GlobalApproximateEntropyMetric;
@@ -82,7 +83,8 @@ public abstract class AbstractReport {
 		StringBuilder sb = new StringBuilder();
 		for (int c = 0; c < components; c++) {
 			sb.append(";");
-			sb.append(spectrum.getNodeOfProbe(c).getFullName());
+			Node node = spectrum.getNodeOfProbe(c);
+			sb.append(node.getFullName() + node.getLineRange());
 		}
 		sb.append(";outcome");
 		output.add(sb.toString());

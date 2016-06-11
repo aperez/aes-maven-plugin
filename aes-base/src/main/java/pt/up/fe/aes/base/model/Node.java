@@ -149,13 +149,11 @@ public class Node {
 		if (p == null || p.isRoot())
 			return name;
 
-		String str = p.getFullName() + getSymbol(p.type, type) + name;
-		
-		if (this.type == Type.METHOD) {
-			str += "[" + this.startLine + "," + this.endLine + "]";
-		}
-		
-		return str;
+		return p.getFullName() + getSymbol(p.type, type) + name;
+	}
+	
+	public String getLineRange() {
+		return  "[" + this.startLine + "," + this.endLine + "]";
 	}
 
 	private static String getSymbol(Type t1, Type t2) {
