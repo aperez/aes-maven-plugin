@@ -12,5 +12,6 @@ public interface Granularity {
 
 	public boolean stopInstrumenting();
 	
-	public Node getNode(CtClass cls, CtBehavior m, int line, MethodInfo info, CodeAttribute ca);
+	public Node getNode(CtClass cls, CtBehavior m, int line, MethodInfo info, CodeAttribute ca, int index, int instrSize);
+
 }

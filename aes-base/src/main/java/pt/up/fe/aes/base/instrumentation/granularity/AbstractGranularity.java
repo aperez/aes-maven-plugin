@@ -24,7 +24,7 @@ public abstract class AbstractGranularity implements Granularity {
 		this.ci = ci;
 	}
 
-	private Node getNode(Collector c, Node parent, String name, Node.Type type, int startLine, int endLine) {
+	protected Node getNode(Collector c, Node parent, String name, Node.Type type, int startLine, int endLine) {
 		Node node = parent.getChild(name);
 
 		if (node == null) {
@@ -76,7 +76,8 @@ public abstract class AbstractGranularity implements Granularity {
 		try {
 			CodeIterator ci = ca.iterator();
 			while (ci.hasNext()) {
-				endLine = info.getLineNumber(ci.next());
+				int index = ci.next();
+				endLine = info.getLineNumber(index);
 				if (startLine == -1) {
 					startLine = endLine;
 				}
@@ -88,7 +89,7 @@ public abstract class AbstractGranularity implements Granularity {
 		return getNode(c, parent, m.getName() + Descriptor.toString(m.getSignature()), Node.Type.METHOD, startLine, endLine);
 	}
 
-	public Node getNode(CtClass cls, CtBehavior m, int line, MethodInfo info, CodeAttribute ca) {
+	public Node getNode(CtClass cls, CtBehavior m, int line, MethodInfo info, CodeAttribute ca, int index, int instrSize) {
 		Collector c = Collector.instance();
 		Node parent = getNode(cls, m, info, ca);
 

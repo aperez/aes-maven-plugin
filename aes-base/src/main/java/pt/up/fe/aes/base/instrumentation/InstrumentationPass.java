@@ -82,7 +82,7 @@ public class InstrumentationPass implements Pass {
 					continue;
 
 				if(g.instrumentAtIndex(index, instrSize)) {
-					Node n = g.getNode(c, b, curLine, info, ca);
+					Node n = g.getNode(c, b, curLine, info, ca, index, instrSize);
 					Bytecode bc = getInstrumentationCode(c, n, info.getConstPool());
 					ci.insert(index, bc.get());
 					instrSize += bc.length();

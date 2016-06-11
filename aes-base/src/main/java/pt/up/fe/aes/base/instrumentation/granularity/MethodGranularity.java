@@ -24,7 +24,7 @@ public class MethodGranularity extends AbstractGranularity {
 	}
 
 	@Override
-	public Node getNode(CtClass cls, CtBehavior m, int line, MethodInfo info, CodeAttribute ca) {
+	public Node getNode(CtClass cls, CtBehavior m, int line, MethodInfo info, CodeAttribute ca, int index, int instrSize) {
 		return super.getNode(cls, m, info, ca);
 	}
 }
