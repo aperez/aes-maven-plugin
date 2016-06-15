@@ -153,7 +153,7 @@ public class Node {
 	}
 	
 	public String getLineRange() {
-		return  "[" + this.startLine + "," + this.endLine + "]";
+		return  "{" + this.startLine + "," + this.endLine + "}";
 	}
 
 	private static String getSymbol(Type t1, Type t2) {
