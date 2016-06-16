@@ -19,8 +19,12 @@ public class AESMojo extends AbstractAESMojo {
 
 		Spectrum spectrum = retrieveCurrentSpectrum();
 		
-		if (spectrum == null || spectrum.getTransactionsSize() == 0) {
+		if (spectrum == null) {
 			throw new MojoFailureException("Could not gather coverage information. Exiting AES analysis.");
+		}
+		
+		if (spectrum.getTransactionsSize() == 0) {
+			return; //nothing to analyze
 		}
 		
 		if (classesToInstrument != null && !classesToInstrument.isEmpty()) {
